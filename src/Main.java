@@ -47,10 +47,18 @@ public class Main {
     void shouldConvert50ToL(){
         assertEquals("L", toRoman(50));
     }
+    @Test
+    void shouldConvert90ToXC(){
+        assertEquals("XC", toRoman(90));
+    }
 
     private String toRoman(int number) {
         String romanNumber = "";
         while (number > 0) {
+            if (number > 49 && number < 89) {
+                romanNumber += "L";
+                number = number - 50;
+            }
             if (number > 39 && number < 49) {
                 romanNumber += "XL";
                 number = number -40;

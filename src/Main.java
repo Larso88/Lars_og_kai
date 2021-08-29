@@ -19,6 +19,10 @@ public class Main {
     void shouldConvert4ToIV(){
         assertEquals("IV", toRoman(4));
     }
+    @Test
+    void shouldConvert5ToV(){
+        assertEquals("V", toRoman(5));
+    }
 
 
 
@@ -32,6 +36,9 @@ public class Main {
         }
         else if (number ==3) {
             romanNumber = "III";
+        }
+        else if (number == 4){
+            romanNumber = "IV";
         }
 
         System.out.println(romanNumber);

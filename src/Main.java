@@ -27,6 +27,10 @@ public class Main {
     void shouldConvert6ToVI(){
         assertEquals("VI", toRoman(6));
     }
+    @Test
+    void souldConvert7ToVII(){
+        assertEquals("VII", toRoman(7));
+    }
 
 
 
@@ -44,6 +48,9 @@ public class Main {
             } else if (number == 5) {
                 romanNumber += "V";
                 number = number -5;
+            } else if (number == 6) {
+                romanNumber += "VI";
+                number = number -6;
             }
             System.out.println(romanNumber);
         }return romanNumber;

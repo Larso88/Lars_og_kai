@@ -15,6 +15,11 @@ public class Main {
     void shouldConvert3ToIII(){
         assertEquals("III", toRoman(3));
     }
+    @Test
+    void shouldConvert4ToIV(){
+        assertEquals("IV", toRoman(4));
+    }
+
 
 
     private String toRoman(int number) {
@@ -22,9 +27,12 @@ public class Main {
         if (number == 1) {
             romanNumber = "I";
         }
-            else if (number == 2) {
-                romanNumber = "II";
-            }
+        else if (number == 2) {
+            romanNumber = "II";
+        }
+        else if (number ==3) {
+            romanNumber = "III";
+        }
 
         System.out.println(romanNumber);
         return romanNumber;

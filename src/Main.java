@@ -31,26 +31,28 @@ public class Main {
     void souldConvert7ToVII(){
         assertEquals("VII", toRoman(7));
     }
-
-
-
+    @Test
+    void souldConvert10ToX(){
+        assertEquals("X", toRoman(10));
+    }
 
     private String toRoman(int number) {
         String romanNumber = "";
-
         while (number > 0) {
-            if (number < 4) {
-                romanNumber += "I";
-                number = number -1;
-            } else if (number == 4) {
-                romanNumber += "IV";
-                number = number -4;
-            } else if (number == 5) {
+            if (number == 9) {
+                romanNumber += "IX";
+            }
+            if (number < 9 && number > 4) {
                 romanNumber += "V";
                 number = number -5;
-            } else if (number == 6) {
-                romanNumber += "VI";
-                number = number -6;
+            }
+            if (number == 4) {
+                romanNumber += "IV";
+                number = number -4;
+            }
+            if (number < 4 && number > 0) {
+                romanNumber += "I";
+                number = number -1;
             }
             System.out.println(romanNumber);
         }return romanNumber;

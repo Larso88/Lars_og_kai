@@ -35,6 +35,10 @@ public class Main {
     void souldConvert10ToX(){
         assertEquals("X", toRoman(10));
     }
+    @Test
+    void souldConvert11ToXI(){
+        assertEquals("XI", toRoman(11));
+    }
 
     private String toRoman(int number) {
         String romanNumber = "";
@@ -53,6 +57,10 @@ public class Main {
             if (number < 4 && number > 0) {
                 romanNumber += "I";
                 number = number -1;
+            }
+            if (number == 10) {
+                romanNumber = "X";
+                number = number -10;
             }
             System.out.println(romanNumber);
         }return romanNumber;

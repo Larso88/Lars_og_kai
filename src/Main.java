@@ -67,13 +67,21 @@ public class Main {
     void shouldConvert900ToCM(){
         assertEquals("CM", toRoman(900));
     }
+    @Test
+    void shouldConvert1000ToM(){
+        assertEquals("M", toRoman(1000));
+    }
 
 
 
     private String toRoman(int number) {
         String romanNumber = "";
         while (number > 0) {
-            if (number > 499 && number <900) {
+            if (number > 899 && number < 1000) {
+                romanNumber += "CM";
+                number = number - 900;
+            }
+            if (number > 499 && number < 900) {
                 romanNumber += "D";
                 number = number - 500;
             }

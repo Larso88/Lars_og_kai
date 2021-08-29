@@ -28,25 +28,33 @@ public class Main {
         assertEquals("VI", toRoman(6));
     }
     @Test
-    void souldConvert7ToVII(){
+    void shouldConvert7ToVII(){
         assertEquals("VII", toRoman(7));
     }
     @Test
-    void souldConvert10ToX(){
+    void shouldConvert10ToX(){
         assertEquals("X", toRoman(10));
     }
     @Test
-    void souldConvert11ToXI(){
+    void shouldConvert11ToXI(){
         assertEquals("XI", toRoman(11));
+    }
+    @Test
+    void shouldConvert40ToXL() {
+        assertEquals("XL", toRoman(40));
     }
 
     private String toRoman(int number) {
         String romanNumber = "";
         while (number > 0) {
+            if (number > 9 && number < 40) {
+                romanNumber = "X";
+                number = number -10;
+            }
             if (number == 9) {
                 romanNumber += "IX";
             }
-            if (number < 9 && number > 4) {
+            if (number > 4 && number < 9) {
                 romanNumber += "V";
                 number = number -5;
             }
@@ -54,14 +62,11 @@ public class Main {
                 romanNumber += "IV";
                 number = number -4;
             }
-            if (number < 4 && number > 0) {
+            if (number > 0 && number < 4) {
                 romanNumber += "I";
                 number = number -1;
             }
-            if (number == 10) {
-                romanNumber = "X";
-                number = number -10;
-            }
+
             System.out.println(romanNumber);
         }return romanNumber;
     }

@@ -1,5 +1,9 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello Kai");
+    @Test
+    void shouldConvert1ToI() {
+        assertEquals("I", toRoman(1));
     }
 }

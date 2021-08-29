@@ -63,16 +63,25 @@ public class Main {
     void shouldConvert500ToD(){
         assertEquals("D", toRoman(500));
     }
+    @Test
+    void shouldConvert900ToCM(){
+        assertEquals("CM", toRoman(900));
+    }
+
 
 
     private String toRoman(int number) {
         String romanNumber = "";
         while (number > 0) {
+            if (number > 499 && number <900) {
+                romanNumber += "D";
+                number = number - 500;
+            }
             if (number > 399 && number < 500){
                 romanNumber += "CD";
                 number = number -400;
             }
-            if (number > 99 && number < 399) {
+            if (number > 99 && number < 400) {
                 romanNumber += "C";
                 number = number - 100;
             }
@@ -80,11 +89,11 @@ public class Main {
                 romanNumber += "XC";
                 number = number -90;
             }
-            if (number > 49 && number < 89) {
+            if (number > 49 && number < 90) {
                 romanNumber += "L";
                 number = number - 50;
             }
-            if (number > 39 && number < 49) {
+            if (number > 39 && number < 50) {
                 romanNumber += "XL";
                 number = number -40;
             }

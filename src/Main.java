@@ -23,26 +23,29 @@ public class Main {
     void shouldConvert5ToV(){
         assertEquals("V", toRoman(5));
     }
+    @Test
+    void shouldConvert6ToVI(){
+        assertEquals("VI", toRoman(6));
+    }
+
 
 
 
     private String toRoman(int number) {
         String romanNumber = "";
-        if (number == 1) {
-            romanNumber = "I";
-        }
-        else if (number == 2) {
-            romanNumber = "II";
-        }
-        else if (number ==3) {
-            romanNumber = "III";
-        }
-        else if (number == 4){
-            romanNumber = "IV";
-        }
 
-        System.out.println(romanNumber);
-        return romanNumber;
+        while (number > 0) {
+            if (number < 4) {
+                romanNumber += "I";
+                number = number -1;
+            } else if (number == 4) {
+                romanNumber += "IV";
+                number = number -4;
+            } else if (number == 5) {
+                romanNumber += "V";
+                number = number -5;
+            }
+            System.out.println(romanNumber);
+        }return romanNumber;
     }
-
 }

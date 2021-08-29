@@ -43,16 +43,25 @@ public class Main {
     void shouldConvert40ToXL() {
         assertEquals("XL", toRoman(40));
     }
+    @Test
+    void shouldConvert50ToL(){
+        assertEquals("L", toRoman(50));
+    }
 
     private String toRoman(int number) {
         String romanNumber = "";
         while (number > 0) {
+            if (number > 39 && number < 49) {
+                romanNumber += "XL";
+                number = number -40;
+            }
             if (number > 9 && number < 40) {
-                romanNumber = "X";
+                romanNumber += "X";
                 number = number -10;
             }
             if (number == 9) {
                 romanNumber += "IX";
+                number = number -9;
             }
             if (number > 4 && number < 9) {
                 romanNumber += "V";

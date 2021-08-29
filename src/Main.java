@@ -51,10 +51,18 @@ public class Main {
     void shouldConvert90ToXC(){
         assertEquals("XC", toRoman(90));
     }
+    @Test
+    void shouldConvert100ToC(){
+        assertEquals("C", toRoman(100));
+    }
 
     private String toRoman(int number) {
         String romanNumber = "";
         while (number > 0) {
+            if (number > 89 && number  < 100) {
+                romanNumber += "XC";
+                number = number -90;
+            }
             if (number > 49 && number < 89) {
                 romanNumber += "L";
                 number = number - 50;
